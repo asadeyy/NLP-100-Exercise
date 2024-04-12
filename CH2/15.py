@@ -4,9 +4,13 @@
 user_input = input("自然数Nを入力してください: ")
 with open("popular-names.txt") as f:
     lines = f.readlines()
-    lines.reverse()
-    for i in range(int(user_input)):
-        print(lines[i], end="")
+lines.reverse()
 
+results = []
+for i in range(int(user_input)):
+    results.append(lines[i])
+results.reverse()
+for result in results:
+    print(result, end="")
 
 # 確認コマンド： tail -n N popular-names.txt
